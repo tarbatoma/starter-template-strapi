@@ -1,0 +1,104 @@
+/* ====== BLOGS LIST PAGE (responsive) ====== */
+
+.page {
+  padding: 24px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+/* Grid responsive */
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* >= 640px: 2 coloane */
+@media (min-width: 640px) {
+  .list { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* >= 1024px: 3 coloane */
+@media (min-width: 1024px) {
+  .list { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* >= 1440px: 4 coloane */
+@media (min-width: 1440px) {
+  .list { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Card clickabil */
+.card {
+  display: block;              /* <Link> pe tot cardul */
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,0.02);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #444;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Imagine 16:9 (fallback dacă nu vine dimensiunea din API) */
+.media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0f0f0f;
+}
+
+/* Conținutul cardului */
+.body {
+  padding: 14px;
+}
+
+.kicker {
+  opacity: .7;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.cardTitle {
+  font-size: clamp(16px, 2.2vw, 18px);
+  font-weight: 700;
+}
+
+.excerpt {
+  margin-top: 8px;
+  color: #9aa0a6;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* Taguri */
+.tags {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 12px;
+  opacity: .85;
+  border: 1px solid #333;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+/* Empty state */
+.empty {
+  opacity: .8;
+  padding: 24px 0;
+}
